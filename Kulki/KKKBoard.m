@@ -69,57 +69,50 @@
 
 -(NSMutableArray*)getPathForBall:(KKKBall*)ball toGridPoint:(CGPoint)gridPoint{
     
-    NSArray *dx = @[@1,@-1,@0,@0];
-    NSArray *dy = @[@0,@0,@1,@-1];
+    int dx[] = {1,-1,0,0};
+    int dy[] = {0,0,1,-1};
     
-    NSMutableArray *minDistance = [NSMutableArray arrayWithCapacity:9];
-    NSMutableArray *parent = [NSMutableArray arrayWithCapacity:9];
-    for(int i = 0;i < 9; i++){
-        [minDistance addObject:[NSMutableArray arrayWithCapacity:9]];
-        [parent addObject:[NSMutableArray arrayWithCapacity:9]];
-    }
+    CGPoint parent[9][9];
+    int minDistance[9][9];
     
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
-            minDistance[i][j] = @100;
-            parent[i][j] = [NSValue valueWithCGPoint:CGPointMake(-1, -1)];
+            minDistance[i][j] = 100;
+            parent[i][j] = CGPointMake(-1, -1);
         }
     }
     
-    NSMutableArray *queueX = [NSMutableArray array];
-    NSMutableArray *queueY = [NSMutableArray array];
+    CGPoint queue[100];
+    int head, tail;
+    head = tail = 0;
     
     CGPoint source = ball.gridPoint;
-    minDistance[(int)source.x][(int)source.y] = @0;
-    [queueX addObject:[NSNumber numberWithLong:(long)source.x]];
-    [queueY addObject:[NSNumber numberWithLong:(long)source.y]];
+    minDistance[(int)source.x][(int)source.y] = 0;
+    queue[head++] = source;
     
-    while([queueX count]){
+    while(head != tail){
         
-        NSNumber *xNum = (NSNumber*)queueX[0];
-        NSNumber *yNum = (NSNumber*)queueY[0];
-        long sx = [xNum integerValue];
-        long sy = [yNum integerValue];
-        [queueX removeObjectAtIndex:0];
-        [queueY removeObjectAtIndex:0];
+        CGPoint parentPoint = queue[tail++];
+        int sx = parentPoint.x;
+        int sy = parentPoint.y;
         
         for(int i = 0;i < 4;i++){
-            long nx = sx + [dx[i] integerValue];
-            long ny = sy + [dy[i] integerValue];
+            
+            long nx = sx + dx[i];
+            long ny = sy + dy[i];
             
             if(nx < 0 || ny < 0 || ny > 8 || nx > 8 )continue;
             if([[self.board[nx][ny] class] isSubclassOfClass:[KKKBall class]])continue;
             
-            if( [minDistance[nx][ny] integerValue] > [minDistance[sx][sy] integerValue] + 1){
-                minDistance[nx][ny] = [NSNumber numberWithLong:[minDistance[sx][sy] integerValue] +1];
-                [queueX addObject:[NSNumber numberWithLong:nx]];
-                [queueY addObject:[NSNumber numberWithLong:ny]];
-                parent[nx][ny] = [NSValue valueWithCGPoint:CGPointMake(sx, sy)];
+            if( minDistance[nx][ny] > minDistance[sx][sy] + 1){
+                minDistance[nx][ny] = minDistance[sx][sy] + 1;
+                queue[head++] = CGPointMake(nx, ny);
+                parent[nx][ny] = parentPoint;
             }
         }
     }
     
-    if( [minDistance[(int)gridPoint.x][(int)gridPoint.y] isEqual: @100]){
+    if( minDistance[(int)gridPoint.x][(int)gridPoint.y]  ==  100){
         return nil;
     }
     
@@ -128,8 +121,7 @@
     do {
         CGPoint pathElement = parentPoint;
         [reversePath addObject:[NSValue valueWithCGPoint:pathElement]];
-        NSValue *parentValue = parent[(int)pathElement.x][(int)pathElement.y];
-        parentPoint = [parentValue CGPointValue];
+        parentPoint = parent[(int)pathElement.x][(int)pathElement.y];
     } while (parentPoint.x != -1.0);
     
     NSMutableArray *path = [NSMutableArray array];
@@ -137,23 +129,23 @@
         CGPoint point = [reversePath[i] CGPointValue];
         [path addObject:[NSValue valueWithCGPoint:[self CGPointForGridPoint:point]]];
     }
-    //Test
+    
     return path;
 }
 
 
 -(NSMutableArray*)getLinesToPopIncludingBall:(KKKBall*)ball{
     
-    NSArray *dxArr = @[@1,@-1,@0,@0,@1,@-1,@1,@-1];
-    NSArray *dyArr = @[@0,@0,@1,@-1,@1,@-1,@-1,@1];
+    int dxArr[] = {1,-1,0,0,1,-1,1,-1};
+    int dyArr[] = {0,0,1,-1,1,-1,-1,1};
     NSMutableArray *lines = [NSMutableArray array];
     NSMutableArray *line = [NSMutableArray array];
     KKKBall *temp;
     
     for (int i = 0;i < 8 ;i++) {
 
-        long dx = [dxArr[i] integerValue];
-        long dy = [dyArr[i] integerValue];
+        int dx = dxArr[i];
+        int dy = dyArr[i];
         
         long sx = ball.gridPoint.x;
         long sy = ball.gridPoint.y;
@@ -264,9 +256,13 @@
 }
 
 -(void)didRemoveBall:(KKKBall *)ball{
-    self.board[(int)ball.gridPoint.x][(int)ball.gridPoint.y] = [NSNull null];
-    [self.freeX addObject:[NSNumber numberWithInt:ball.gridPoint.x]];
-    [self.freeY addObject:[NSNumber numberWithInt:ball.gridPoint.y]];
+    
+    if( [[self.board[(int)ball.gridPoint.x][(int)ball.gridPoint.y] class] isSubclassOfClass:[KKKBall class]]){
+        
+        self.board[(int)ball.gridPoint.x][(int)ball.gridPoint.y] = [NSNull null];
+        [self.freeX addObject:[NSNumber numberWithInt:ball.gridPoint.x]];
+        [self.freeY addObject:[NSNumber numberWithInt:ball.gridPoint.y]];
+    }
 }
 
 
