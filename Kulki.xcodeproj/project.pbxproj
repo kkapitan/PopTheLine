@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		029A910B1ABDB21300CC4A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910A1ABDB21300CC4A6D /* main.m */; };
+		029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910D1ABDB21300CC4A6D /* AppDelegate.m */; };
+		029A91111ABDB21300CC4A6D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91101ABDB21300CC4A6D /* GameScene.m */; };
+		029A91161ABDB21300CC4A6D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91151ABDB21300CC4A6D /* GameViewController.m */; };
+		029A91191ABDB21300CC4A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029A91171ABDB21300CC4A6D /* Main.storyboard */; };
+		029A911B1ABDB21300CC4A6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029A911A1ABDB21300CC4A6D /* Images.xcassets */; };
+		029A911E1ABDB21300CC4A6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029A911C1ABDB21300CC4A6D /* LaunchScreen.xib */; };
+		029A912A1ABDB21300CC4A6D /* KulkiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91291ABDB21300CC4A6D /* KulkiTests.m */; };
+		029A91381ABDB84400CC4A6D /* KKKBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91371ABDB84400CC4A6D /* KKKBoard.m */; };
+		029A913E1ABDC6B900CC4A6D /* jungle.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A913D1ABDC6B900CC4A6D /* jungle.png */; };
+		029A91411ABDDB2900CC4A6D /* KKKBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91401ABDDB2900CC4A6D /* KKKBall.m */; };
+		029A91491ABF2CCE00CC4A6D /* GameGrid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A91481ABF2CCE00CC4A6D /* GameGrid@2x.png */; };
+		029A914B1ABF324A00CC4A6D /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A914A1ABF324A00CC4A6D /* red@2x.png */; };
+		029A914D1ABF326000CC4A6D /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A914C1ABF326000CC4A6D /* green@2x.png */; };
+		029A914F1ABF3DBE00CC4A6D /* yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A914E1ABF3DBE00CC4A6D /* yellow@2x.png */; };
+		029A91511ABF3DD300CC4A6D /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A91501ABF3DD300CC4A6D /* blue@2x.png */; };
+		029A91531ABF3DDF00CC4A6D /* brown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 029A91521ABF3DDF00CC4A6D /* brown@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		029A91241ABDB21300CC4A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 029A90FD1ABDB21300CC4A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 029A91041ABDB21300CC4A6D;
+			remoteInfo = Kulki;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		029A91051ABDB21300CC4A6D /* Kulki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kulki.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		029A91091ABDB21300CC4A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029A910A1ABDB21300CC4A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		029A910C1ABDB21300CC4A6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		029A910D1ABDB21300CC4A6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		029A910F1ABDB21300CC4A6D /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		029A91101ABDB21300CC4A6D /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		029A91141ABDB21300CC4A6D /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		029A91151ABDB21300CC4A6D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		029A91181ABDB21300CC4A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		029A911A1ABDB21300CC4A6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		029A911D1ABDB21300CC4A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		029A91231ABDB21300CC4A6D /* KulkiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KulkiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		029A91281ABDB21300CC4A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029A91291ABDB21300CC4A6D /* KulkiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KulkiTests.m; sourceTree = "<group>"; };
+		029A91361ABDB84400CC4A6D /* KKKBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKBoard.h; sourceTree = "<group>"; };
+		029A91371ABDB84400CC4A6D /* KKKBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKBoard.m; sourceTree = "<group>"; };
+		029A913D1ABDC6B900CC4A6D /* jungle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jungle.png; sourceTree = "<group>"; };
+		029A913F1ABDDB2900CC4A6D /* KKKBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKBall.h; sourceTree = "<group>"; };
+		029A91401ABDDB2900CC4A6D /* KKKBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKBall.m; sourceTree = "<group>"; };
+		029A91481ABF2CCE00CC4A6D /* GameGrid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameGrid@2x.png"; sourceTree = "<group>"; };
+		029A914A1ABF324A00CC4A6D /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red@2x.png"; sourceTree = "<group>"; };
+		029A914C1ABF326000CC4A6D /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		029A914E1ABF3DBE00CC4A6D /* yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yellow@2x.png"; sourceTree = "<group>"; };
+		029A91501ABF3DD300CC4A6D /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		029A91521ABF3DDF00CC4A6D /* brown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brown@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		029A91021ABDB21300CC4A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029A91201ABDB21300CC4A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		029A90FC1ABDB21300CC4A6D = {
+			isa = PBXGroup;
+			children = (
+				029A91071ABDB21300CC4A6D /* Kulki */,
+				029A91261ABDB21300CC4A6D /* KulkiTests */,
+				029A91061ABDB21300CC4A6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		029A91061ABDB21300CC4A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				029A91051ABDB21300CC4A6D /* Kulki.app */,
+				029A91231ABDB21300CC4A6D /* KulkiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		029A91071ABDB21300CC4A6D /* Kulki */ = {
+			isa = PBXGroup;
+			children = (
+				029A910C1ABDB21300CC4A6D /* AppDelegate.h */,
+				029A910D1ABDB21300CC4A6D /* AppDelegate.m */,
+				029A910F1ABDB21300CC4A6D /* GameScene.h */,
+				029A91101ABDB21300CC4A6D /* GameScene.m */,
+				029A91141ABDB21300CC4A6D /* GameViewController.h */,
+				029A91151ABDB21300CC4A6D /* GameViewController.m */,
+				029A91171ABDB21300CC4A6D /* Main.storyboard */,
+				029A911A1ABDB21300CC4A6D /* Images.xcassets */,
+				029A91331ABDB25200CC4A6D /* Images */,
+				029A911C1ABDB21300CC4A6D /* LaunchScreen.xib */,
+				029A91081ABDB21300CC4A6D /* Supporting Files */,
+				029A91361ABDB84400CC4A6D /* KKKBoard.h */,
+				029A91371ABDB84400CC4A6D /* KKKBoard.m */,
+				029A913F1ABDDB2900CC4A6D /* KKKBall.h */,
+				029A91401ABDDB2900CC4A6D /* KKKBall.m */,
+			);
+			path = Kulki;
+			sourceTree = "<group>";
+		};
+		029A91081ABDB21300CC4A6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				029A91091ABDB21300CC4A6D /* Info.plist */,
+				029A910A1ABDB21300CC4A6D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		029A91261ABDB21300CC4A6D /* KulkiTests */ = {
+			isa = PBXGroup;
+			children = (
+				029A91291ABDB21300CC4A6D /* KulkiTests.m */,
+				029A91271ABDB21300CC4A6D /* Supporting Files */,
+			);
+			path = KulkiTests;
+			sourceTree = "<group>";
+		};
+		029A91271ABDB21300CC4A6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				029A91281ABDB21300CC4A6D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		029A91331ABDB25200CC4A6D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				029A913D1ABDC6B900CC4A6D /* jungle.png */,
+				029A91521ABF3DDF00CC4A6D /* brown@2x.png */,
+				029A914C1ABF326000CC4A6D /* green@2x.png */,
+				029A914A1ABF324A00CC4A6D /* red@2x.png */,
+				029A91501ABF3DD300CC4A6D /* blue@2x.png */,
+				029A914E1ABF3DBE00CC4A6D /* yellow@2x.png */,
+				029A91481ABF2CCE00CC4A6D /* GameGrid@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		029A91041ABDB21300CC4A6D /* Kulki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029A912D1ABDB21300CC4A6D /* Build configuration list for PBXNativeTarget "Kulki" */;
+			buildPhases = (
+				029A91011ABDB21300CC4A6D /* Sources */,
+				029A91021ABDB21300CC4A6D /* Frameworks */,
+				029A91031ABDB21300CC4A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kulki;
+			productName = Kulki;
+			productReference = 029A91051ABDB21300CC4A6D /* Kulki.app */;
+			productType = "com.apple.product-type.application";
+		};
+		029A91221ABDB21300CC4A6D /* KulkiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029A91301ABDB21300CC4A6D /* Build configuration list for PBXNativeTarget "KulkiTests" */;
+			buildPhases = (
+				029A911F1ABDB21300CC4A6D /* Sources */,
+				029A91201ABDB21300CC4A6D /* Frameworks */,
+				029A91211ABDB21300CC4A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				029A91251ABDB21300CC4A6D /* PBXTargetDependency */,
+			);
+			name = KulkiTests;
+			productName = KulkiTests;
+			productReference = 029A91231ABDB21300CC4A6D /* KulkiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		029A90FD1ABDB21300CC4A6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Krzysztof Kapitan";
+				TargetAttributes = {
+					029A91041ABDB21300CC4A6D = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					029A91221ABDB21300CC4A6D = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 029A91041ABDB21300CC4A6D;
+					};
+				};
+			};
+			buildConfigurationList = 029A91001ABDB21300CC4A6D /* Build configuration list for PBXProject "Kulki" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 029A90FC1ABDB21300CC4A6D;
+			productRefGroup = 029A91061ABDB21300CC4A6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				029A91041ABDB21300CC4A6D /* Kulki */,
+				029A91221ABDB21300CC4A6D /* KulkiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		029A91031ABDB21300CC4A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029A914F1ABF3DBE00CC4A6D /* yellow@2x.png in Resources */,
+				029A91511ABF3DD300CC4A6D /* blue@2x.png in Resources */,
+				029A911E1ABDB21300CC4A6D /* LaunchScreen.xib in Resources */,
+				029A91531ABF3DDF00CC4A6D /* brown@2x.png in Resources */,
+				029A914D1ABF326000CC4A6D /* green@2x.png in Resources */,
+				029A911B1ABDB21300CC4A6D /* Images.xcassets in Resources */,
+				029A91491ABF2CCE00CC4A6D /* GameGrid@2x.png in Resources */,
+				029A913E1ABDC6B900CC4A6D /* jungle.png in Resources */,
+				029A914B1ABF324A00CC4A6D /* red@2x.png in Resources */,
+				029A91191ABDB21300CC4A6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029A91211ABDB21300CC4A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		029A91011ABDB21300CC4A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029A91161ABDB21300CC4A6D /* GameViewController.m in Sources */,
+				029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */,
+				029A91411ABDDB2900CC4A6D /* KKKBall.m in Sources */,
+				029A91111ABDB21300CC4A6D /* GameScene.m in Sources */,
+				029A910B1ABDB21300CC4A6D /* main.m in Sources */,
+				029A91381ABDB84400CC4A6D /* KKKBoard.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029A911F1ABDB21300CC4A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029A912A1ABDB21300CC4A6D /* KulkiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		029A91251ABDB21300CC4A6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 029A91041ABDB21300CC4A6D /* Kulki */;
+			targetProxy = 029A91241ABDB21300CC4A6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		029A91171ABDB21300CC4A6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029A91181ABDB21300CC4A6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		029A911C1ABDB21300CC4A6D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029A911D1ABDB21300CC4A6D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		029A912B1ABDB21300CC4A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		029A912C1ABDB21300CC4A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		029A912E1ABDB21300CC4A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kulki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		029A912F1ABDB21300CC4A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kulki/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		029A91311ABDB21300CC4A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KulkiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kulki.app/Kulki";
+			};
+			name = Debug;
+		};
+		029A91321ABDB21300CC4A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KulkiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kulki.app/Kulki";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		029A91001ABDB21300CC4A6D /* Build configuration list for PBXProject "Kulki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029A912B1ABDB21300CC4A6D /* Debug */,
+				029A912C1ABDB21300CC4A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029A912D1ABDB21300CC4A6D /* Build configuration list for PBXNativeTarget "Kulki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029A912E1ABDB21300CC4A6D /* Debug */,
+				029A912F1ABDB21300CC4A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029A91301ABDB21300CC4A6D /* Build configuration list for PBXNativeTarget "KulkiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029A91311ABDB21300CC4A6D /* Debug */,
+				029A91321ABDB21300CC4A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 029A90FD1ABDB21300CC4A6D /* Project object */;
+}
