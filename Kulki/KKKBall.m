@@ -54,9 +54,9 @@
 
 -(void)select
 {
-    SKAction *fadeIn = [SKAction fadeOutWithDuration:0.2];
-    SKAction *fadeOut = [SKAction fadeInWithDuration:0.2];
-    SKAction *selected = [SKAction sequence:@[fadeOut,fadeIn]];
+    SKAction *pulseIn =  [SKAction scaleTo: 1.0 duration:0.2];
+    SKAction *pulseOut = [SKAction scaleTo:0.8 duration:0.2];
+    SKAction *selected = [SKAction sequence:@[pulseOut,pulseIn]];
     
     [self runAction:[SKAction repeatActionForever:selected] withKey:@"selected"];
     
@@ -67,7 +67,7 @@
 -(void)deselect
 {
     [self removeActionForKey:@"selected"];
-    self.alpha = 1.0;
+    self.xScale = self.yScale = 1.0;
     if(self.delegate)
         [self.delegate didDeselectBall:self];
 }
