@@ -46,7 +46,7 @@
 -(void)setupInitialState{
     self.nextBalls = [NSMutableArray array];
     [self drawNewBalls];
-    [self addNewBalls];
+    [self addNewBallsWithCompletion:nil];
 }
 
 -(void)drawNewBalls{
@@ -62,7 +62,10 @@
     }
 }
 
--(void)addNewBalls{
+
+-(void)addNewBallsWithCompletion:(void(^)(void))block{
+    
+    SKAction *appear = [SKAction scaleTo:1.0 duration:0.5];
     
     for(int i = 0;i < self.nextBalls.count; i++){
     
@@ -77,17 +80,23 @@
         newBall.gridPoint = gridPoint;
         newBall.position = [self CGPointForGridPoint:newBall.gridPoint];
         newBall.delegate = self;
+        newBall.xScale = newBall.yScale = 0.1;
         
         self.board[(int)gridPoint.x][(int)gridPoint.y] = newBall;
         
         [self addChild:newBall];
         
+        if(i != self.nextBalls.count - 1){
+            [newBall runAction:appear];
+        }else {
+            [newBall runAction:appear completion:block];
+        }
+            
         [self.freeX removeObjectAtIndex:position];
         [self.freeY removeObjectAtIndex:position];
     }
     
     [self drawNewBalls];
-    
 }
 
 -(NSMutableArray*)getPathForBall:(KKKBall*)ball toGridPoint:(CGPoint)gridPoint{
@@ -263,10 +272,14 @@
     NSMutableArray *lines = [self getLinesToPopIncludingBall:ball];
     [self.selectedBall deselect];
     
+    
+    __weak KKKBoard* self_ = self;
     if(!lines.count){
-        [self addNewBalls];
-        if(!self.freeX.count)
-            [self.delegate didEndGameWithScore:self.score];
+        [self addNewBallsWithCompletion:^{
+            if(!self_.freeX.count){
+                [self_.delegate didEndGameWithScore:self_.score];
+            }
+        }];
     }
     
     [self updateScore:lines];
