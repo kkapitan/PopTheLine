@@ -7,9 +7,11 @@
 //
 
 #import "GameScene.h"
+#import "GameOverScene.h"
 
 @interface GameScene ()
-@property(nonatomic) SKLabelNode *scoreLabel;
+@property UILabel *scoreLabel;
+@property NSMutableArray *nextBallImageViews;
 @end
 
 @implementation GameScene
@@ -18,26 +20,50 @@
     /* Setup your scene here */
     self.scene.backgroundColor = [SKColor greenColor];
     
+    self.scoreLabel = (UILabel*)[self.view viewWithTag:100];
+    self.nextBallImageViews = [NSMutableArray array];
+    for(int i = 110; i <= 112; i++){
+        [self.nextBallImageViews addObject:[self.view viewWithTag:i]];
+    }
+    
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"jungle.png"];
     background.anchorPoint = CGPointZero;
     [self.scene addChild:background];
     
     KKKBoard* board = [[KKKBoard alloc] initWithImageNamed:@"GameGrid.png"];
     
-    board.alpha = 0.7;
+    board.alpha = 0.8;
     board.position = CGPointMake(CGRectGetMidX(self.scene.frame),CGRectGetMidY(self.scene.frame));
     board.userInteractionEnabled = YES;
     board.delegate = self;
+    
+    [board setupInitialState];
+
     [self addChild:board];
     
-    self.scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    self.scoreLabel.text = @"Points: 0";
-    self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.scene.frame),50);
-    [self addChild:self.scoreLabel];
 }
 
 -(void)didUpdateScore:(int)newScore{
-    self.scoreLabel.text = [NSString stringWithFormat:@"Points: %d",newScore];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%d",newScore];
+}
+
+-(void)didEndGameWithScore:(int)score{
+    GameOverScene *gameOverScene = [GameOverScene sceneWithSize:self.size];
+    [self.view presentScene:gameOverScene];
+}
+
+-(void)didDrawNewBalls:(NSArray *)balls{
+    UIImageView *nextBallImageView;
+    for(int i = 0; i < self.nextBallImageViews.count; i++){
+        nextBallImageView = (UIImageView*)self.nextBallImageViews[i];
+        nextBallImageView.image = nil;
+    }
+    
+    for(int i = 0; i < balls.count; i++){
+        KKKBall *ball = (KKKBall*)balls[i];
+        nextBallImageView = (UIImageView*)self.nextBallImageViews[i];
+        nextBallImageView.image = [UIImage imageNamed:ball.name];
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

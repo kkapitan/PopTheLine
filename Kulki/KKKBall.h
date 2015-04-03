@@ -25,13 +25,11 @@
 @property (nonatomic) CGPoint gridPoint;
 @property (nonatomic,weak) id<KKKBallDelegate> delegate;
 
-+(instancetype)ballWithColor:(NSString*)color withGridPoint:(CGPoint)gridPoint;
-+(instancetype)ballWithRandomColorWithGridPoint:(CGPoint)gridPoint;
++(instancetype)ballWithColor:(NSString*)color;
++(instancetype)ballWithRandomColor;
 
--(instancetype)initWithColor:(NSString*)color withGridPoint:(CGPoint)gridPoint;
--(instancetype)initWithRandomColorWithGridPoint:(CGPoint)gridPoint;
-
--(void)setGridPoint:(CGPoint)gridPoint;
+-(instancetype)initWithColor:(NSString*)color;
+-(instancetype)initWithRandomColor;
 
 -(void)select;
 -(void)deselect;

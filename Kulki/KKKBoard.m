@@ -12,6 +12,7 @@
 @property (nonatomic) NSMutableArray* freeX;
 @property (nonatomic) NSMutableArray* freeY;
 @property (nonatomic) KKKBall *selectedBall;
+@property (nonatomic) NSMutableArray *nextBalls;
 @property (nonatomic) int score;
 @end
 
@@ -38,15 +39,32 @@
             self.board[i][j] = [NSNull null];
         }
     }
-    [self addNewBalls];
     
     return self;
 }
 
+-(void)setupInitialState{
+    self.nextBalls = [NSMutableArray array];
+    [self drawNewBalls];
+    [self addNewBalls];
+}
+
+-(void)drawNewBalls{
+    
+    long numberOfNewBalls = MIN(3,self.freeX.count);
+    [self.nextBalls removeAllObjects];
+    for(int i = 0;i < numberOfNewBalls; i++){
+        [self.nextBalls addObject:[KKKBall ballWithRandomColor]];
+    }
+    
+    if(self.delegate){
+        [self.delegate didDrawNewBalls:[self.nextBalls copy]];
+    }
+}
+
 -(void)addNewBalls{
     
-    long numberOfNewBalls = MIN(3,[self.freeX count]);
-    for(int i = 0;i < numberOfNewBalls; i++){
+    for(int i = 0;i < self.nextBalls.count; i++){
     
         int position = (int)arc4random()%[self.freeX count];
         
@@ -55,16 +73,21 @@
         
         CGPoint gridPoint = CGPointMake([xCoord intValue], [yCoord intValue]);
         
-        KKKBall *newBall = [KKKBall ballWithRandomColorWithGridPoint:gridPoint];
-        self.board[(int)gridPoint.x][(int)gridPoint.y] = newBall;
+        KKKBall *newBall = self.nextBalls[i];
+        newBall.gridPoint = gridPoint;
         newBall.position = [self CGPointForGridPoint:newBall.gridPoint];
         newBall.delegate = self;
+        
+        self.board[(int)gridPoint.x][(int)gridPoint.y] = newBall;
         
         [self addChild:newBall];
         
         [self.freeX removeObjectAtIndex:position];
         [self.freeY removeObjectAtIndex:position];
     }
+    
+    [self drawNewBalls];
+    
 }
 
 -(NSMutableArray*)getPathForBall:(KKKBall*)ball toGridPoint:(CGPoint)gridPoint{
@@ -132,7 +155,6 @@
     
     return path;
 }
-
 
 -(NSMutableArray*)getLinesToPopIncludingBall:(KKKBall*)ball{
     
@@ -243,8 +265,8 @@
     
     if(!lines.count){
         [self addNewBalls];
-        if(!self.freeX)
-            [self.delegate didEndGame];
+        if(!self.freeX.count)
+            [self.delegate didEndGameWithScore:self.score];
     }
     
     [self updateScore:lines];
@@ -264,8 +286,6 @@
         [self.freeY addObject:[NSNumber numberWithInt:ball.gridPoint.y]];
     }
 }
-
-
 
 -(CGPoint)gridPointForCGPoint:(CGPoint)point{
     

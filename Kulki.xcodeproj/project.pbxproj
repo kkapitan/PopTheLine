@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020FDD711ACD9E7B0019E53E /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 020FDD701ACD9E7B0019E53E /* GameOverScene.m */; };
 		029A910B1ABDB21300CC4A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910A1ABDB21300CC4A6D /* main.m */; };
 		029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910D1ABDB21300CC4A6D /* AppDelegate.m */; };
 		029A91111ABDB21300CC4A6D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91101ABDB21300CC4A6D /* GameScene.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020FDD6F1ACD9E7B0019E53E /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		020FDD701ACD9E7B0019E53E /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		029A91051ABDB21300CC4A6D /* Kulki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kulki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029A91091ABDB21300CC4A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029A910A1ABDB21300CC4A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				029A910D1ABDB21300CC4A6D /* AppDelegate.m */,
 				029A910F1ABDB21300CC4A6D /* GameScene.h */,
 				029A91101ABDB21300CC4A6D /* GameScene.m */,
+				020FDD6F1ACD9E7B0019E53E /* GameOverScene.h */,
+				020FDD701ACD9E7B0019E53E /* GameOverScene.m */,
 				029A91141ABDB21300CC4A6D /* GameViewController.h */,
 				029A91151ABDB21300CC4A6D /* GameViewController.m */,
 				029A91171ABDB21300CC4A6D /* Main.storyboard */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020FDD711ACD9E7B0019E53E /* GameOverScene.m in Sources */,
 				029A91161ABDB21300CC4A6D /* GameViewController.m in Sources */,
 				029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */,
 				029A91411ABDDB2900CC4A6D /* KKKBall.m in Sources */,

@@ -12,13 +12,16 @@
 
 @protocol KKKGameDelegate <NSObject>
 
+-(void)didDrawNewBalls:(NSArray*)balls;
 -(void)didUpdateScore:(int)newScore;
--(void)didEndGame;
+-(void)didEndGameWithScore:(int)score;
 
 @end
 
 @interface KKKBoard : SKSpriteNode <KKKBallDelegate>
 @property (nonatomic) NSMutableArray *board;
 @property (nonatomic,weak) id<KKKGameDelegate> delegate;
+
+-(void)setupInitialState;
 
 @end

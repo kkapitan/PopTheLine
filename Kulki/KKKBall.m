@@ -14,40 +14,33 @@
 
 @implementation KKKBall
 
-+(instancetype)ballWithColor:(NSString*)color withGridPoint:(CGPoint)gridPoint
++(instancetype)ballWithColor:(NSString*)color
 {
-    return [[KKKBall alloc] initWithColor:color withGridPoint:gridPoint];
+    return [[KKKBall alloc] initWithColor:color];
 }
 
--(instancetype)initWithColor:(NSString*)color withGridPoint:(CGPoint)gridPoint
+-(instancetype)initWithColor:(NSString*)color
 {
     NSDictionary *imageNameForColor = [KKKBall imageNameForColorDictionary];
     self = [super initWithImageNamed:imageNameForColor[color]];
-    
-    self.gridPoint = gridPoint;
     self.name = color;
-    
     return self;
 }
 
-+(instancetype)ballWithRandomColorWithGridPoint:(CGPoint)gridPoint
++(instancetype)ballWithRandomColor
 {
-    return [[KKKBall alloc] initWithRandomColorWithGridPoint:gridPoint];
+    return [[KKKBall alloc] initWithRandomColor];
 }
 
--(instancetype)initWithRandomColorWithGridPoint:(CGPoint)gridPoint
-{
+-(instancetype)initWithRandomColor{
+    
     NSDictionary *imageNameForColor = [KKKBall imageNameForColorDictionary];
     int colorId = (int)arc4random()%[imageNameForColor count];
     NSArray *keys = [imageNameForColor allKeys];
     NSString *color = keys[colorId];
     
-    self = [KKKBall ballWithColor:color withGridPoint:gridPoint];
-
-    return self;
+    return [KKKBall ballWithColor:color];
 }
-
-
 
 +(NSDictionary*)imageNameForColorDictionary
 {
