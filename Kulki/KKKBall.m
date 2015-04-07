@@ -21,8 +21,8 @@
 
 -(instancetype)initWithColor:(NSString*)color
 {
-    NSDictionary *imageNameForColor = [KKKBall imageNameForColorDictionary];
-    self = [super initWithImageNamed:imageNameForColor[color]];
+    NSDictionary *textureCache = [KKKBall textureCache];
+    self = [super initWithTexture:(SKTexture*)textureCache[color]];
     self.name = color;
     return self;
 }
@@ -44,21 +44,43 @@
 
 +(NSDictionary*)imageNameForColorDictionary
 {
-    NSDictionary *imageNameKeyColorValue = @{@"Green":@"green.png",
-                                             @"Red":@"red.png", @"Yellow":@"yellow.png",
-                                             @"Blue":@"blue.png", @"Brown":@"brown.png"};
+    static NSDictionary *imageNameKeyColorValue;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        imageNameKeyColorValue = @{
+            @"Green":@"green.png",
+            @"Red":@"red.png",
+            @"Yellow":@"yellow.png",
+            @"Blue":@"blue.png",
+            @"Brown":@"brown.png"
+        };
+
+    });
     return imageNameKeyColorValue;
 }
 
++(NSDictionary*)textureCache
+{
+    static NSMutableDictionary *textureCache;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        textureCache = [NSMutableDictionary dictionary];
+        NSDictionary *imageNameForColor = [KKKBall imageNameForColorDictionary];
+        for (NSString *color in imageNameForColor) {
+            
+            SKTexture *texture = [SKTexture textureWithImageNamed:imageNameForColor[color]];
+            textureCache[color] = texture;
+        }
+    });
+    return textureCache;
+}
 
 
 -(void)select
 {
-    SKAction *pulseIn =  [SKAction scaleTo: 1.0 duration:0.2];
-    SKAction *pulseOut = [SKAction scaleTo:0.8 duration:0.2];
-    SKAction *selected = [SKAction sequence:@[pulseOut,pulseIn]];
-    
-    [self runAction:[SKAction repeatActionForever:selected] withKey:@"selected"];
+    [self runAction:[KKKBall actionForSelection] withKey:@"selected"];
     
     if(self.delegate)
         [self.delegate didSelectBall:self];
@@ -110,11 +132,36 @@
     if(self.delegate)
         [self.delegate didRemoveBall:self];
     
-    [self runAction:[SKAction sequence:@[[SKAction scaleTo:0.1 duration:0.2],[SKAction removeFromParent]]]];
+    [self runAction:[KKKBall actionForRemoval]];
     
 }
 
++(SKAction*)actionForSelection{
+    
+    static SKAction* selectionAction;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SKAction *pulseIn =  [SKAction scaleTo: 1.0 duration:0.2];
+        SKAction *pulseOut = [SKAction scaleTo:0.8 duration:0.2];
+        SKAction *selected = [SKAction sequence:@[pulseOut,pulseIn]];
+        selectionAction = [SKAction repeatActionForever:selected];
+    });
+    return selectionAction;
+}
 
++(SKAction*)actionForRemoval{
+    
+    static SKAction* removalAction;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        removalAction = [SKAction sequence:@[
+            [SKAction scaleTo:0.1 duration:0.2],
+            [SKAction removeFromParent]]];
+    });
+    return removalAction;
+}
 
 
 @end

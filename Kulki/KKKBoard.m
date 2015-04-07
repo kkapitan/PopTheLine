@@ -62,7 +62,6 @@
     }
 }
 
-
 -(void)addNewBallsWithCompletion:(void(^)(void))block{
     
     SKAction *appear = [SKAction scaleTo:1.0 duration:0.5];
@@ -202,30 +201,6 @@
     return lines;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [touches enumerateObjectsUsingBlock:^(id obj,BOOL *stop){
-       
-        UITouch *touch = (UITouch*)obj;
-        CGPoint grid = [self gridPointForCGPoint:[touch locationInNode:self]];
-        id gridElement = self.board[(int)grid.x][(int)grid.y];
-        
-        if( [[gridElement class] isSubclassOfClass: [KKKBall class]]){
-            
-            KKKBall *ball = (KKKBall*) gridElement;
-            if(self.selectedBall)
-                [self.selectedBall deselect];
-            [ball select];
-            
-        }else if(self.selectedBall){
-            NSArray *path = [self getPathForBall:self.selectedBall toGridPoint:grid];
-            if(path){
-                [self.selectedBall moveToGridPoint:grid withPath:path];
-            }
-        }
-    }];
-    
-    }
-
 -(void)updateScore:(NSArray*)poppedLines{
     
     int points = 0;
@@ -237,6 +212,47 @@
     if(self.delegate)
         [self.delegate didUpdateScore:self.score];
 }
+
+-(void)endGame{
+    self.userInteractionEnabled = NO;
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            KKKBall *ball = (KKKBall*)self.board[j][i];
+            CGFloat duration = !(i % 2) ? ((CGFloat)(i*9+j))/10.0 :((CGFloat)(i*9+8-j))/10.0;
+            [self runAction:[SKAction waitForDuration:duration] completion:^{
+                [ball remove];
+                if(i == 8 && j == 8 && self.delegate)
+                    [self.delegate didEndGameWithScore:self.score];
+            }];
+        }
+    }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"lalala");
+    [touches enumerateObjectsUsingBlock:^(id obj,BOOL *stop){
+       
+        UITouch *touch = (UITouch*)obj;
+        CGPoint gridPoint = [self gridPointForCGPoint:[touch locationInNode:self]];
+        id gridElement = self.board[(int)gridPoint.x][(int)gridPoint.y];
+        
+        if( [[gridElement class] isSubclassOfClass: [KKKBall class]]){
+            
+            KKKBall *ball = (KKKBall*) gridElement;
+            if(self.selectedBall)
+                [self.selectedBall deselect];
+            [ball select];
+            
+        }else if(self.selectedBall){
+            NSArray *path = [self getPathForBall:self.selectedBall toGridPoint:gridPoint];
+            if(path){
+                self.userInteractionEnabled = NO;
+                [self.selectedBall moveToGridPoint:gridPoint withPath:path];
+            }
+        }
+    }];
+}
+
 
 -(void)didSelectBall:(KKKBall *)ball{
     self.selectedBall = ball;
@@ -277,7 +293,7 @@
     if(!lines.count){
         [self addNewBallsWithCompletion:^{
             if(!self_.freeX.count){
-                [self_.delegate didEndGameWithScore:self_.score];
+                [self_ endGame];
             }
         }];
     }
@@ -288,6 +304,7 @@
         for(KKKBall *ball in line)
             [ball remove];
     
+    self.userInteractionEnabled = YES;
 }
 
 -(void)didRemoveBall:(KKKBall *)ball{

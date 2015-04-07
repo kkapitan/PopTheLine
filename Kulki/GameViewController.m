@@ -26,16 +26,16 @@
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
         /* Sprite Kit applies additional optimizations to improve rendering performance */
-        skView.ignoresSiblingOrder = YES;
+        //skView.ignoresSiblingOrder = YES;
         
         // Create and configure the scene.
         GameScene *scene = [[GameScene alloc] initWithSize:self.view.bounds.size];
         scene.scaleMode = SKSceneScaleModeAspectFill;
-    
         // Present the scene.
         [skView presentScene:scene];
 
     }
+    
 }
 
 - (BOOL)shouldAutorotate

@@ -8,10 +8,12 @@
 
 #import "GameScene.h"
 #import "GameOverScene.h"
+#import "KKKScrollingBackground.h"
 
 @interface GameScene ()
 @property UILabel *scoreLabel;
 @property NSMutableArray *nextBallImageViews;
+@property KKKScrollingBackground *backgroundNode;
 @end
 
 @implementation GameScene
@@ -26,9 +28,13 @@
         [self.nextBallImageViews addObject:[self.view viewWithTag:i]];
     }
     
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"jungle.png"];
+    /*SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"jungle.png"];
     background.anchorPoint = CGPointZero;
     [self.scene addChild:background];
+    */
+    
+    self.backgroundNode = [[KKKScrollingBackground alloc] initWithImageNamed:@"jungle.png"];
+    [self addChild:self.backgroundNode];
     
     KKKBoard* board = [[KKKBoard alloc] initWithImageNamed:@"GameGrid.png"];
     
@@ -36,10 +42,13 @@
     board.position = CGPointMake(CGRectGetMidX(self.scene.frame),CGRectGetMidY(self.scene.frame));
     board.userInteractionEnabled = YES;
     board.delegate = self;
+    board.zPosition = 100;
     
     [board setupInitialState];
 
     [self addChild:board];
+    
+    
     
 }
 
@@ -67,11 +76,10 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+    [self.backgroundNode updateWithTime:currentTime];
 }
 
 @end

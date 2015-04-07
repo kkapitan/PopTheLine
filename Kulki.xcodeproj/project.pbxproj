@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		020FDD711ACD9E7B0019E53E /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 020FDD701ACD9E7B0019E53E /* GameOverScene.m */; };
+		0295E9AC1AD417E800A17A55 /* KKKScrollingBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 0295E9AB1AD417E800A17A55 /* KKKScrollingBackground.m */; };
 		029A910B1ABDB21300CC4A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910A1ABDB21300CC4A6D /* main.m */; };
 		029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910D1ABDB21300CC4A6D /* AppDelegate.m */; };
 		029A91111ABDB21300CC4A6D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91101ABDB21300CC4A6D /* GameScene.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		020FDD6F1ACD9E7B0019E53E /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		020FDD701ACD9E7B0019E53E /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		0295E9AA1AD417E800A17A55 /* KKKScrollingBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKScrollingBackground.h; sourceTree = "<group>"; };
+		0295E9AB1AD417E800A17A55 /* KKKScrollingBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKScrollingBackground.m; sourceTree = "<group>"; };
 		029A91051ABDB21300CC4A6D /* Kulki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kulki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029A91091ABDB21300CC4A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029A910A1ABDB21300CC4A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				029A91371ABDB84400CC4A6D /* KKKBoard.m */,
 				029A913F1ABDDB2900CC4A6D /* KKKBall.h */,
 				029A91401ABDDB2900CC4A6D /* KKKBall.m */,
+				0295E9AA1AD417E800A17A55 /* KKKScrollingBackground.h */,
+				0295E9AB1AD417E800A17A55 /* KKKScrollingBackground.m */,
 			);
 			path = Kulki;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				020FDD711ACD9E7B0019E53E /* GameOverScene.m in Sources */,
+				0295E9AC1AD417E800A17A55 /* KKKScrollingBackground.m in Sources */,
 				029A91161ABDB21300CC4A6D /* GameViewController.m in Sources */,
 				029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */,
 				029A91411ABDDB2900CC4A6D /* KKKBall.m in Sources */,
