@@ -9,6 +9,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import "KKKBoard.h"
 
-@interface GameScene : SKScene <KKKGameDelegate>
-
+@interface GameScene : SKScene
+@property (nonatomic, weak) id<KKKGameDelegate> boardDelegate;
 @end

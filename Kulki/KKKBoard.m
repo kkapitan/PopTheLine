@@ -229,7 +229,7 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"lalala");
+    
     [touches enumerateObjectsUsingBlock:^(id obj,BOOL *stop){
        
         UITouch *touch = (UITouch*)obj;

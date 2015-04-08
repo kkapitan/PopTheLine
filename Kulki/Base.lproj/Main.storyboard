@@ -72,6 +72,9 @@
                             <constraint firstAttribute="centerX" secondItem="fw8-M2-w5i" secondAttribute="centerX" constant="28" id="zSi-FC-kot"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="Dtg-gd-kp5" id="HcU-NS-SWJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>

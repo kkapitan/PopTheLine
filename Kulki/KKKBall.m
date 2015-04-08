@@ -45,15 +45,15 @@
 +(NSDictionary*)imageNameForColorDictionary
 {
     static NSDictionary *imageNameKeyColorValue;
-
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         imageNameKeyColorValue = @{
-            @"Green":@"green.png",
-            @"Red":@"red.png",
-            @"Yellow":@"yellow.png",
-            @"Blue":@"blue.png",
-            @"Brown":@"brown.png"
+            @"Green":@"Green.png",
+            @"Red":@"Red.png",
+            @"Yellow":@"Yellow.png",
+            @"Blue":@"Blue.png",
+            @"Brown":@"Brown.png"
         };
 
     });
