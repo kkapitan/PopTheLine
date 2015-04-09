@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="width" constant="138" id="fJY-7a-fTM"/>
                                     <constraint firstAttribute="height" constant="48" id="p4g-dK-dO2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,12 +48,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtg-gd-kp5">
-                                <rect key="frame" x="334" y="33" width="138" height="48"/>
+                                <rect key="frame" x="319" y="28" width="138" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MCz-vD-12b"/>
                                     <constraint firstAttribute="width" constant="138" id="SY0-4t-Rqu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="34"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -61,9 +61,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="18s-1X-uFH" firstAttribute="leading" secondItem="dhO-Bo-Ybv" secondAttribute="trailing" constant="14" id="1Pd-vZ-sLG"/>
-                            <constraint firstItem="Dtg-gd-kp5" firstAttribute="top" secondItem="PCf-gQ-wO7" secondAttribute="bottom" constant="13" id="DmH-sN-Zlh"/>
+                            <constraint firstItem="Dtg-gd-kp5" firstAttribute="top" secondItem="PCf-gQ-wO7" secondAttribute="bottom" constant="8" id="DmH-sN-Zlh"/>
                             <constraint firstItem="dhO-Bo-Ybv" firstAttribute="leading" secondItem="ChP-Wd-Qmk" secondAttribute="trailing" constant="16" id="Jbt-xS-Bb4"/>
-                            <constraint firstItem="Dtg-gd-kp5" firstAttribute="leading" secondItem="fw8-M2-w5i" secondAttribute="trailing" constant="-7" id="RZm-5J-Fdq"/>
+                            <constraint firstItem="Dtg-gd-kp5" firstAttribute="leading" secondItem="fw8-M2-w5i" secondAttribute="trailing" constant="-22" id="RZm-5J-Fdq"/>
                             <constraint firstItem="dhO-Bo-Ybv" firstAttribute="top" secondItem="fw8-M2-w5i" secondAttribute="bottom" constant="24" id="SVt-KB-PPL"/>
                             <constraint firstItem="ChP-Wd-Qmk" firstAttribute="top" secondItem="fw8-M2-w5i" secondAttribute="bottom" constant="24" id="ad2-XV-6Pm"/>
                             <constraint firstAttribute="centerX" secondItem="dhO-Bo-Ybv" secondAttribute="centerX" id="f5y-F7-ZUi"/>
@@ -74,6 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="Dtg-gd-kp5" id="HcU-NS-SWJ"/>
+                        <outlet property="scoreStaticLabel" destination="fw8-M2-w5i" id="6dg-LM-EsK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>

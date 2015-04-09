@@ -47,6 +47,7 @@
     self.nextBalls = [NSMutableArray array];
     [self drawNewBalls];
     [self addNewBallsWithCompletion:nil];
+    
 }
 
 -(void)drawNewBalls{
@@ -102,7 +103,7 @@
     
     int dx[] = {1,-1,0,0};
     int dy[] = {0,0,1,-1};
-    
+
     CGPoint parent[9][9];
     int minDistance[9][9];
     

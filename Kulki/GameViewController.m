@@ -9,14 +9,21 @@
 #import "GameViewController.h"
 #import "MenuScene.h"
 #import "KLCPopup.h"
+#import "KKKGameData.h"
 
 @interface GameViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *scoreStaticLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) NSMutableArray* nextBallImageViews;
+
+@property (nonatomic) KLCPopup* menuPopup;
+@property (nonatomic) KLCPopup* gameOverPopup;
+
 @end
 
 @implementation GameViewController
+
 
 - (void)viewDidLoad
 {
@@ -26,18 +33,6 @@
         NSValue *value = [NSValue valueWithNonretainedObject:[self.view viewWithTag:i]];
         [self.nextBallImageViews addObject:value];
     }
-    
-    
-    //NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"GameOver" owner:self options:nil];
-    //UIView *myView = nibViews[0];
-    //NSLog(@"%f %f",myView.frame.size.height,myView.frame.size.width);
-    //    myView.frame = CGRectMake(0, 0, 100, 100);
-    ///myView.translatesAutoresizingMaskIntoConstraints = NO;
-    //KLCPopup *popup = [KLCPopup popupWithContentView:myView];
-    //[popup show];
-    
-
-    
 }
 
 -(void)viewWillLayoutSubviews
@@ -54,14 +49,8 @@
             //skView.ignoresSiblingOrder = YES;
             
             // Create and configure the scene.
-            GameScene *scene = [[GameScene alloc] initWithSize:self.view.bounds.size];
-            // MenuScene *scene = [[MenuScene alloc] initWithSize:self.view.bounds.size];
-            
-            scene.scaleMode = SKSceneScaleModeAspectFill;
-            scene.boardDelegate = self;
-            // Present the scene.
-            [skView presentScene:scene];
-            
+            [self presentMenu];
+        
         }
     }
     
@@ -73,11 +62,14 @@
 }
 
 -(void)didEndGameWithScore:(int)score{
-    // GameOverScene *gameOverScene = [GameOverScene sceneWithSize:self.size];
-    //[self.view presentScene:gameOverScene];
     
-}
+    if(score > [[KKKGameData sharedGameData] highScore]){
+        [[KKKGameData sharedGameData] setHighScore:score];
+    }
+    
+    [self.gameOverPopup show];
 
+}
 
 -(void)didDrawNewBalls:(NSArray *)balls{
    
@@ -93,6 +85,87 @@
         nextBallImageView.image = [UIImage imageNamed:ball.name];
         
     }
+}
+
+-(void)presentMenu{
+    
+    for(NSValue* value in self.nextBallImageViews){
+        UIImageView *imageView = (UIImageView*)[value nonretainedObjectValue];
+        imageView.image = nil;
+    }
+    
+    self.scoreLabel.text = @"0";
+    self.scoreLabel.hidden = YES;
+    self.scoreStaticLabel.hidden = YES;
+    
+    NSArray *menuNibViews = [[NSBundle mainBundle] loadNibNamed:@"GameMenu" owner:self options:nil];
+    UIView *menuView = menuNibViews[0];
+    UILabel *highScoreLabel = (UILabel*)[menuView viewWithTag:10];
+    highScoreLabel.text = [NSString stringWithFormat:@"%d",
+                           [[KKKGameData sharedGameData] highScore]];
+    
+    self.menuPopup = [KLCPopup popupWithContentView:menuView
+                                           showType:KLCPopupShowTypeBounceIn
+                                        dismissType:KLCPopupDismissTypeBounceOut
+                                           maskType:KLCPopupMaskTypeClear
+                           dismissOnBackgroundTouch:NO
+                              dismissOnContentTouch:NO];
+    
+    
+    
+    SKView *skView = (SKView *)self.view;
+    
+    MenuScene *scene = [[MenuScene alloc] initWithSize:self.view.bounds.size];
+    
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    // Present the scene.
+    [skView presentScene:scene];
+    
+    [self.menuPopup show];
+}
+
+-(void)presentGame{
+    
+    
+    self.scoreLabel.hidden = NO;
+    self.scoreStaticLabel.hidden = NO;
+   
+    NSArray *gameOverNibViews = [[NSBundle mainBundle] loadNibNamed:@"GameOver" owner:self options:nil];
+    UIView *gameOverView = gameOverNibViews[0];
+    
+    self.gameOverPopup = [KLCPopup popupWithContentView:gameOverView
+                                               showType:KLCPopupShowTypeBounceIn
+                                            dismissType:KLCPopupDismissTypeBounceOut
+                                               maskType:KLCPopupMaskTypeClear
+                               dismissOnBackgroundTouch:NO
+                                  dismissOnContentTouch:NO];
+    
+
+    
+    SKView *skView = (SKView*)self.view;
+    GameScene *scene = [[GameScene alloc] initWithSize:self.view.bounds.size];
+    
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.boardDelegate = self;
+    // Present the scene.
+    [skView presentScene:scene];
+}
+
+- (IBAction)mainMenuAction:(id)sender {
+    __weak GameViewController* self_ = self;
+    self.gameOverPopup.didFinishDismissingCompletion = ^{
+        [self_ presentMenu];
+    };
+    [self.gameOverPopup dismiss:YES];
+}
+
+- (IBAction)startGameAction:(id)sender {
+    __weak GameViewController* self_ = self;
+    
+    self.menuPopup.didFinishDismissingCompletion = ^{
+        [self_ presentGame];
+    };
+    [self.menuPopup dismiss:YES];
 }
 
 

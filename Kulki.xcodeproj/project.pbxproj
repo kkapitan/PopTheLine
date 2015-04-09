@@ -11,7 +11,7 @@
 		0295E9AC1AD417E800A17A55 /* KKKScrollingBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 0295E9AB1AD417E800A17A55 /* KKKScrollingBackground.m */; };
 		0295E9AF1AD431A400A17A55 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0295E9AE1AD431A400A17A55 /* MenuScene.m */; };
 		0295E9B21AD43C3700A17A55 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0295E9B11AD43C3700A17A55 /* KLCPopup.m */; };
-		0295E9B91AD44D5F00A17A55 /* GameOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0295E9B81AD44D5F00A17A55 /* GameOver.xib */; };
+		0295E9B91AD44D5F00A17A55 /* GameMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0295E9B81AD44D5F00A17A55 /* GameMenu.xib */; };
 		029A910B1ABDB21300CC4A6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910A1ABDB21300CC4A6D /* main.m */; };
 		029A910E1ABDB21300CC4A6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A910D1ABDB21300CC4A6D /* AppDelegate.m */; };
 		029A91111ABDB21300CC4A6D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91101ABDB21300CC4A6D /* GameScene.m */; };
@@ -22,6 +22,10 @@
 		029A912A1ABDB21300CC4A6D /* KulkiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91291ABDB21300CC4A6D /* KulkiTests.m */; };
 		029A91381ABDB84400CC4A6D /* KKKBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91371ABDB84400CC4A6D /* KKKBoard.m */; };
 		029A91411ABDDB2900CC4A6D /* KKKBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 029A91401ABDDB2900CC4A6D /* KKKBall.m */; };
+		02D804031AD693E4006CE6CD /* button-24843_640.png in Resources */ = {isa = PBXBuildFile; fileRef = 02D804021AD693E4006CE6CD /* button-24843_640.png */; };
+		02D804071AD6B539006CE6CD /* WoodPlank.png in Resources */ = {isa = PBXBuildFile; fileRef = 02D804061AD6B539006CE6CD /* WoodPlank.png */; };
+		02D804091AD6B6DE006CE6CD /* GameOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D804081AD6B6DE006CE6CD /* GameOver.xib */; };
+		02D8040E1AD6EB6F006CE6CD /* KKKGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D8040D1AD6EB6F006CE6CD /* KKKGameData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,7 @@
 		0295E9B01AD43C3700A17A55 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
 		0295E9B11AD43C3700A17A55 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
 		0295E9B51AD43E1600A17A55 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		0295E9B81AD44D5F00A17A55 /* GameOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOver.xib; sourceTree = "<group>"; };
+		0295E9B81AD44D5F00A17A55 /* GameMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameMenu.xib; sourceTree = "<group>"; };
 		029A91051ABDB21300CC4A6D /* Kulki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kulki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029A91091ABDB21300CC4A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029A910A1ABDB21300CC4A6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +68,11 @@
 		029A91371ABDB84400CC4A6D /* KKKBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKBoard.m; sourceTree = "<group>"; };
 		029A913F1ABDDB2900CC4A6D /* KKKBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKBall.h; sourceTree = "<group>"; };
 		029A91401ABDDB2900CC4A6D /* KKKBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKBall.m; sourceTree = "<group>"; };
+		02D804021AD693E4006CE6CD /* button-24843_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-24843_640.png"; sourceTree = "<group>"; };
+		02D804061AD6B539006CE6CD /* WoodPlank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WoodPlank.png; sourceTree = "<group>"; };
+		02D804081AD6B6DE006CE6CD /* GameOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOver.xib; sourceTree = "<group>"; };
+		02D8040C1AD6EB6F006CE6CD /* KKKGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKGameData.h; sourceTree = "<group>"; };
+		02D8040D1AD6EB6F006CE6CD /* KKKGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKGameData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +132,17 @@
 				029A91371ABDB84400CC4A6D /* KKKBoard.m */,
 				029A913F1ABDDB2900CC4A6D /* KKKBall.h */,
 				029A91401ABDDB2900CC4A6D /* KKKBall.m */,
+				02D8040C1AD6EB6F006CE6CD /* KKKGameData.h */,
+				02D8040D1AD6EB6F006CE6CD /* KKKGameData.m */,
 				0295E9AA1AD417E800A17A55 /* KKKScrollingBackground.h */,
 				0295E9AB1AD417E800A17A55 /* KKKScrollingBackground.m */,
 				0295E9B51AD43E1600A17A55 /* PrefixHeader.pch */,
 				0295E9B01AD43C3700A17A55 /* KLCPopup.h */,
 				0295E9B11AD43C3700A17A55 /* KLCPopup.m */,
-				0295E9B81AD44D5F00A17A55 /* GameOver.xib */,
+				0295E9B81AD44D5F00A17A55 /* GameMenu.xib */,
+				02D804081AD6B6DE006CE6CD /* GameOver.xib */,
+				02D804021AD693E4006CE6CD /* button-24843_640.png */,
+				02D804061AD6B539006CE6CD /* WoodPlank.png */,
 			);
 			path = Kulki;
 			sourceTree = "<group>";
@@ -240,9 +254,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				029A911E1ABDB21300CC4A6D /* LaunchScreen.xib in Resources */,
+				02D804091AD6B6DE006CE6CD /* GameOver.xib in Resources */,
+				02D804071AD6B539006CE6CD /* WoodPlank.png in Resources */,
+				02D804031AD693E4006CE6CD /* button-24843_640.png in Resources */,
 				029A911B1ABDB21300CC4A6D /* Images.xcassets in Resources */,
 				029A91191ABDB21300CC4A6D /* Main.storyboard in Resources */,
-				0295E9B91AD44D5F00A17A55 /* GameOver.xib in Resources */,
+				0295E9B91AD44D5F00A17A55 /* GameMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D8040E1AD6EB6F006CE6CD /* KKKGameData.m in Sources */,
 				020FDD711ACD9E7B0019E53E /* GameOverScene.m in Sources */,
 				0295E9B21AD43C3700A17A55 /* KLCPopup.m in Sources */,
 				0295E9AC1AD417E800A17A55 /* KKKScrollingBackground.m in Sources */,

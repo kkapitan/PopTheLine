@@ -13,19 +13,25 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WoodPlank.png" translatesAutoresizingMaskIntoConstraints="NO" id="GNp-3y-p4Q">
                     <rect key="frame" x="0.0" y="0.0" width="289" height="331"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO3-Ej-Dhp">
+                    <rect key="frame" x="38" y="13" width="212" height="76"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chw-AH-ga0">
                     <rect key="frame" x="19" y="192" width="250" height="108"/>
                     <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
-                    <state key="normal" title="Main menu" backgroundImage="button-24843_640.png">
+                    <state key="normal" title="Start game" backgroundImage="button-24843_640.png">
                         <color key="titleColor" red="1" green="0.17611867576492135" blue="0.2175626261324286" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="mainMenuAction:" destination="-1" eventType="touchUpInside" id="62R-jL-Glp"/>
+                        <action selector="startGameAction:" destination="-1" eventType="touchUpInside" id="akd-2Q-wjY"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfE-Zw-ZHT">
-                    <rect key="frame" x="38" y="31" width="212" height="147"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="66"/>
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5c-Zl-PMN">
+                    <rect key="frame" x="13" y="90" width="261" height="94"/>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -33,7 +39,7 @@
             <color key="backgroundColor" red="1" green="0.5049867120371534" blue="0.11971963180957379" alpha="0.0" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1359.5" y="595.5"/>
+            <point key="canvasLocation" x="927.5" y="603.5"/>
         </view>
     </objects>
     <resources>
